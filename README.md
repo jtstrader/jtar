@@ -1,14 +1,11 @@
-### jTar README ###
+jTar README
 
 File Class:
 The file class will consist of:
     1. Constructor (default & overloaded)
         Overloaded constructor will be the one used for this project. There will be a function that will
         take in the name of a file and grab its data through lstat, before then creating a file object and
-        returning that value, most likely to push back into a vector.
-
-        e.g. vector<File>.push_back(newFile(name))
-
+        returning that value, most likely to push back into a vector. ( e.g. vector<File>.push_back(newFile(name)) )
     2. Copy Constructor
     3. = overloading
     4. Getter Functions:
@@ -20,7 +17,6 @@ The file class will consist of:
            will use sizeof(File)
         f. void flagAsDir(): will be used while reading in files in -cf to flag a file as a directory
         g. bool isADir(): will be used to determine if a file is a directory
-
     5. Variables:
         a. char name[81] = contains the name of the file. returned by getName()
         b. char pmode[5] = contains the permissions of the file. returned by getPmode()
