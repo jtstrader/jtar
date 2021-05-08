@@ -1,6 +1,7 @@
-### jTar README ###
+# jTar README
+A replication of Linux's tar command that can compress, uncompress, and read file headers (file/directory names) of compressed files by jtar.
 
-File Class:
+# File Class
 The file class will consist of:
     1. Constructor (default & overloaded)
         Overloaded constructor will be the one used for this project. There will be a function that will
@@ -24,15 +25,15 @@ The file class will consist of:
         d. char stamp[16] = contains the timestamp of the file. returned by getStamp()
         e. bool ADir = keeps track if the file is a directory or not
 
--cf Process
+# cf (Compress) Process
 cf is the compression of the provided files into a single archive (.tar) file. cf will first read in all the files and
 recursively go through each directory, taking the data from all the directories and appending everything to a single File
-vector. To avoid changing into different directories the names of the files will be stored as relative path names, e.g.
+vector. To avoid changing into different directories the names of the files will be stored as relative path names:
 
-Examples
-Examples/SmallFiles
-Examples/SmallFiles/Test1
-                    -> "This file contains text! It's not a directory!"
+    Examples
+    Examples/SmallFiles
+    Examples/SmallFiles/Test1
+                        -> "This file contains text! It's not a directory!"
 
 Once are files are in the file vector with their information, the files will then be investigated. If the file is a directory,
 the file information will simply be sent to the binary file with a sizeof(File). If the file is a text file/data file, cf will
@@ -42,7 +43,7 @@ Once all this data is sent out, the binary file is created. The files can be ext
 in the file names which were saved in the objects. For readability and courtesy, a header will be input at the top of the binary file
 indicating how many files are present in the .tar file.
 
--xf Process
+# xf (Uncompress) Process
 xf is the extraction of the provided .tar file. It first opens the .tar file and then investigates it. If the file is a directory,
 then the program will need to make a directory and will need to use the system() command to make the directory, change the permissions,
 and then change the timestamp. Afterwards, the program will continue normally. If the file is not a directory, the function will first 
