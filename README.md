@@ -1,4 +1,4 @@
-jTar README
+### jTar README ###
 
 File Class:
 The file class will consist of:
