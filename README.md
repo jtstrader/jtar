@@ -3,7 +3,7 @@
 File Class:
 The file class will consist of:
     1. Constructor (default & overloaded)
-        *Overloaded constructor will be the one used for this project. There will be a function that will
+        Overloaded constructor will be the one used for this project. There will be a function that will
         take in the name of a file and grab its data through lstat, before then creating a file object and
         returning that value, most likely to push back into a vector.
 
