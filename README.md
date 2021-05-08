@@ -1,29 +1,29 @@
-# jTar README
+# jTar
 A replication of Linux's tar command that can compress, uncompress, and read file headers (file/directory names) of compressed files by jtar.
 
 # File Class
 The file class will consist of:
-    1. Constructor (default & overloaded)
-        Overloaded constructor will be the one used for this project. There will be a function that will
-        take in the name of a file and grab its data through lstat, before then creating a file object and
-        returning that value, most likely to push back into a vector. ( e.g. vector<File>.push_back(newFile(name)) )
-    2. Copy Constructor
-    3. = overloading
-    4. Getter Functions:
-        a. string getSize(): gets total size of file
-        b. string getName(): gets name of file
-        c. string getPmode(): gets permissions of file
-        d. string getStamp(): gets timestamp of file
-        e. int recordSize(): gets the size of the record (name, pmode, size, and stamp). Will not be used. Instead
-           will use sizeof(File)
-        f. void flagAsDir(): will be used while reading in files in -cf to flag a file as a directory
-        g. bool isADir(): will be used to determine if a file is a directory
-    5. Variables:
-        a. char name[81] = contains the name of the file. returned by getName()
-        b. char pmode[5] = contains the permissions of the file. returned by getPmode()
-        c. char size[7] = contains the size of the file. returned by getSize()
-        d. char stamp[16] = contains the timestamp of the file. returned by getStamp()
-        e. bool ADir = keeps track if the file is a directory or not
+1. Constructor (default & overloaded)
+    - Overloaded constructor will be the one used for this project. There will be a function that will
+      take in the name of a file and grab its data through lstat, before then creating a file object and
+      returning that value, most likely to push back into a vector. ( e.g. vector<File>.push_back(newFile(name)) )
+2. Copy Constructor
+3. = overloading
+4. Getter Functions
+    - string getSize(): gets total size of file
+    - string getName(): gets name of file
+    - string getPmode(): gets permissions of file
+    - string getStamp(): gets timestamp of file
+    - int recordSize(): gets the size of the record (name, pmode, size, and stamp). Will not be used. Instead
+       will use sizeof(File)
+    - void flagAsDir(): will be used while reading in files in -cf to flag a file as a directory
+    - bool isADir(): will be used to determine if a file is a directory
+5. Variables
+    - char name[81] = contains the name of the file. returned by getName()
+    - char pmode[5] = contains the permissions of the file. returned by getPmode()
+    - char size[7] = contains the size of the file. returned by getSize()
+    - char stamp[16] = contains the timestamp of the file. returned by getStamp()
+    - bool ADir = keeps track if the file is a directory or not
 
 # cf (Compress) Process
 cf is the compression of the provided files into a single archive (.tar) file. cf will first read in all the files and
